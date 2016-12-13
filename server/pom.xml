@@ -1,5 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.angus.cuckoo</groupId>
@@ -7,15 +9,21 @@
 		<version>${project.version}</version>
 	</parent>
 
-	<artifactId>cuckoo-core</artifactId>
-	<name>Angus Cuckoo Core ${project.version}</name>
-	<packaging>jar</packaging>
+	<artifactId>cuckoo-server</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Angus Cuckoo Server ${project.version}</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	
+
 	<dependencies>
+		<dependency>
+			<groupId>com.angus.cuckoo</groupId>
+			<artifactId>cuckoo-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
@@ -23,17 +31,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/io.netty/netty -->
-		<dependency>
-    		<groupId>io.netty</groupId>
-    		<artifactId>netty</artifactId>
-    		<version>3.10.6.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.mina</groupId>
-			<artifactId>mina-core</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
