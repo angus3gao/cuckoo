@@ -10,7 +10,6 @@
 	</parent>
 
 	<artifactId>cuckoo-server</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>Angus Cuckoo Server ${project.version}</name>
 	<url>http://maven.apache.org</url>
 	<properties>

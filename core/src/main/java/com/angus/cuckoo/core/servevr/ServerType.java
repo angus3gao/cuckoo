@@ -28,6 +28,7 @@ public enum ServerType {
 	
 	static {
 		id2Types = new HashMap<Integer, ServerType>();
+		name2Types = new HashMap<String, ServerType>();
 		for (ServerType item : ServerType.values()) {
 			id2Types.put(item.getType(), item);
 			name2Types.put(item.getName(), item);

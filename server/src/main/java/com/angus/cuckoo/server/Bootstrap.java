@@ -4,6 +4,7 @@ import java.util.regex.Pattern;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.angus.cuckoo.core.common.logs.Loggers;
 import com.angus.cuckoo.core.common.tools.StringUtils;
 import com.angus.cuckoo.core.servevr.ServerType;
 
@@ -29,11 +30,13 @@ public class Bootstrap {
 	 */
 	@SuppressWarnings("resource")
 	public void start(ServerType serverType) throws Exception {
-
+		Loggers.Server.info("正在启动服务器{" + serverType.getName() + "}");
 		// 初始化spring配置
 		new ClassPathXmlApplicationContext("classpath*:spring/applicationContext-" + serverType.getName() + ".xml");
+		
+		Loggers.Server.info("服务器{" + serverType.getName() + "} 启动完成！");
 	}
-
+	
 	/**
 	 * 安全关闭服务器
 	 */
@@ -44,7 +47,7 @@ public class Bootstrap {
 	public static void main(String[] args) throws Exception {
 		
 		// 处理传递参数
-		String typeName = null == args[0]? args[0]: ServerType.MASTER.getName();
+		String typeName = args.length > 0? args[0]: ServerType.MASTER.getName();
 		// 调用启动服务器方法启动服务器
 		Bootstrap.getInstance().start(ServerType.get(typeName));
 	}
